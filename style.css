@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4b;
+    }
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span{
+    color: #b74b4b;
+    font-weight: bold;
+}
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+}
+
+.home-img{
+    border-radius: 50%;
+}
+
+.home-img img{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid #b74b4b;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    transform: scale(1.1);
+    border-radius: 50%;
+    box-shadow: 0 0 100px #b74b4b;
+    transition: 0.2s  ease;
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #b74b4b;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #b74b4b;
+}
+
+.social-icons a:hover{
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #b74b4b;
+    box-shadow: 0  0 25px #b74b4b;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #b74b4b;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #b74b4b;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale3d(1.03);
+    background-color: #b74b4b;
+    color: black;
+    box-shadow: 0 0 25px #b74b4b;
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "software Developer";
+    color: #b74b4b;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #b74b4b;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: "Fronted Developer";
+    }
+    41%, 60%{
+        content: "UI/UX Designer";
+    }
+    61%, 80%{
+        content: "Graphics Designer";
+    }
+    81%, 100%{
+        content: "Script Writer";
+    }
+}
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+ul {
+    list-style-type: symbols(); /* Changes bullets to squares */
+    margin: 20px 0;
+    padding-left: 40px; /* Indents the list */
+}
+
+ul li {
+    font-size: 1.8rem; /* Makes the text larger */
+    color: #b74b4b; /* Uses your signature red color */
+    margin-bottom: 10px; /* Adds space between items */
+    transition: transform 0.3s ease, color 0.3s ease; /* Animation for hover */
+}
+
+ul li:hover {
+    transform: scale(1.1); /* Slightly enlarges the item */
+    color: white; /* Changes the color when hovered */
+}
+section a {
+    display: inline-block; /* Makes the links behave like buttons */
+    margin: 10px;
+    padding: 10px 20px; /* Adds some space inside the links */
+    color: white;
+    background-color: #b74b4b; /* Red background */
+    border-radius: 5px; /* Rounds the edges */
+    font-size: 1.6rem; /* Increases text size */
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth animation */
+}
+
+section a:hover {
+    transform: translateY(-5px); /* Moves the button up slightly */
+    background-color: white; /* Changes background color */
+    color: #b74b4b; /* Changes text color to red */
+    box-shadow: 0 5px 15px rgba(183, 75, 75, 0.6); /* Adds a glowing effect */
+    
+}
+section a:hover {
+    animation: bounce 0.5s infinite; /* Adds the bounce animation */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Start and end in the same position */
+    }
+    50% {
+        transform: translateY(-10px); /* Moves up slightly in the middle */
+    }
+}
+section {
+    margin: 40px 9%; /* Adds spacing around sections */
+    padding: 20px;
+    background-color: #161616; /* Adds a subtle background */
+}
+section p {
+    font-size: 1.8rem; /* Make the text bigger */
+    line-height: 1.6; /* Add some breathing space between lines */
+    color: white; /* Keep the text white for consistency */
+    text-align: center; /* Center the text */
+    margin: 20px 0; /* Add spacing around the paragraph */
+    animation: fadeIn 1s ease-in-out; /* Add a subtle fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+section h1 {
+    font-size: 3rem; /* Make the heading large */
+    font-weight: 700; /* Bolden the heading */
+    color: #b74b4b; /* Use your signature red */
+    text-transform: uppercase; /* Make all letters capital */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Add space below the heading */
+    position: relative;
+}
+
+section h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #b74b4b;
+    margin: 10px auto 0; /* Center the line */
+    animation: grow 1s ease-in-out; /* Line grows on load */
+}
+
+@keyframes grow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100px;
+    }
+}
+body {
+    padding-top: 100px; /* Prevent header overlap */
+}
+
+section + section {
+    margin-top: 60px; /* Adds space between consecutive sections */
+}
+
